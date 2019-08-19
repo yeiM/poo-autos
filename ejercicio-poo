@@ -1,0 +1,63 @@
+class Carro():
+    Estado=False
+    Nivel_gasolina=5
+
+    def conducir(self,Nivel_gasolina):
+
+        if(self.Nivel_gasolina > 0 and self.Nivel_gasolina <= 5):
+            self.Nivel_gasolina = self.Nivel_gasolina-1
+            print("La gasolina disminuye a:",self.Nivel_gasolina)
+
+        else:
+            print("el carro no tiene gasolina")
+
+    def apagado(self, estado):
+        self.estado=False
+        self.estado()
+
+    def encendido(self, estado):
+        self.estado=True
+        self.estado()
+        
+    def estado(self):
+
+        if(self.estado):
+            print ("el carro esta encendido ")
+        
+        else:
+            print ("el carro esta apagado")
+
+    def llenarGasolina(self,Nivel_gasolina):
+        self.Nivel_gasolina = self.Nivel_gasolina + 1
+        print("La gasolina aumento a:",self.Nivel_gasolina)
+
+
+
+carro1=Carro()
+opcion = int(input("\nMenu\n---------------------\n\t" +
+           " 1. Encender carro\n\t 2. Conducir carro\n\t 3.Llenar gasolina\n\t 4. Apagar carro\n\t 5. Salir\n\n\t" + 
+           "INGRESA UNA OPCION: "))
+       
+while(opcion != 5):
+    
+    if(opcion == 1):
+        carro1.estado()
+
+    elif(opcion == 2):
+        carro1.conducir(carro1.Nivel_gasolina)
+
+    elif(opcion == 3):
+        carro1.llenarGasolina(carro1.Estado)
+
+    elif(opcion == 4):
+        carro1.estado(carro1.Estado)
+
+    elif(opcion == 5):
+        break
+
+    else:
+        print("\nSolo ingresar una opcion valida\n")
+
+    opcion = int(input("\nMenu\n---------------------\n\t" +
+    "1. Encender\n\t 2. Conducir\n\t 3.Llenar gasolina\n\t 4. Apagar\n\t 5. Salir\n\n\t" + 
+    "INGRESA UNA OPCION: "))
